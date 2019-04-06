@@ -1,1 +1,0 @@
-# Disney-s-Animal-Kingdom-Theme-Park-Wait-Time-from-20180701-to-20181231
