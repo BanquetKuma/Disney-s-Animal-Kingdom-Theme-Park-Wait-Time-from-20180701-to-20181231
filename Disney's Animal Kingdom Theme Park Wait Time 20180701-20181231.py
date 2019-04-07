@@ -9,6 +9,7 @@ import plotly_express as px
 import pandas as pd
 from pathlib import Path
 import numpy as np
+import os 
 
 def set_index_datetime(df):
     df["datetime"]=pd.to_datetime(df["datetime"],infer_datetime_format=True) 
@@ -135,6 +136,8 @@ px.scatter_mapbox(df,
                   hover_name="attractions",
                   title="Disney's Animal Kingdom Theme Park Wait Time from {} to {}".format(df["DATETIME"].min(),df["DATETIME"].max()))
 #plotly_expressの描画部分
+
+server = app.server
 
 
 
