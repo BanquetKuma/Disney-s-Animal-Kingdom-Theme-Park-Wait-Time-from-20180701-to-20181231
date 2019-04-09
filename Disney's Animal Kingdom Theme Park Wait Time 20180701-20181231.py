@@ -12,6 +12,8 @@ import numpy as np
 from bottle import route, run
 import os 
 
+@route("/")
+
 def set_index_datetime(df):
     df["datetime"]=pd.to_datetime(df["datetime"],infer_datetime_format=True) 
     #datetime列をdatetime型に変換、infer_datetime_format=Trueで変換速度アップ
@@ -138,7 +140,7 @@ px.scatter_mapbox(df,
                   title="Disney's Animal Kingdom Theme Park Wait Time from {} to {}".format(df["DATETIME"].min(),df["DATETIME"].max()))
 #plotly_expressの描画部分
 
-server = app.server
+run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
 
 
